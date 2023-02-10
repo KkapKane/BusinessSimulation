@@ -53,10 +53,11 @@ async function startLoop(){
          if (chance.d2() >= 2) {
           console.log("from dinner hrs");
            generateTransaction();
-         }
-      }
-      else if(closed) {
-        console.log('from closed')
+          }
+        }
+        else if(closed) {
+          console.log('from closed')
+          generateTransaction();
         return
         
       }
