@@ -9,7 +9,7 @@ function randomIntFromInterval(min, max) {
 
 
 async function generateTransaction() {
-    let rndNumber = randomIntFromInterval(0, 10);
+    let rndNumber = randomIntFromInterval(1, 10);
   let customerName = await generateCustomer(rndNumber);
   let cart = await populateCart(rndNumber);
 
