@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon app.js"
+    "server": "nodemon app.js",
+    "start": "set PORT=3001 && set DEBUG=myapp:* && forever start --minUptime 1000 --spinSleepTime 1000 ./bin/www"
   },
   "repository": {
     "type": "git",
