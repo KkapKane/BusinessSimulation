@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon app.js",
-    "start": "forever start --minUptime 1000 --spinSleepTime 1000 app.js"
+    "start": "forever start --minUptime 1000 --spinSleepTime 1000 app.js",
+    "build": "npm install"
   },
   "repository": {
     "type": "git",
