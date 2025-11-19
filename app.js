@@ -18,17 +18,19 @@ async function startLoop() {
       // Update time and busy hours on each interval
       let time = new Date();
       let currentHour = parseInt(moment(time).format("HH"));
-      
+
       let BusyHour = {
         breakfast: currentHour >= 8 && currentHour < 11,
         lunch: currentHour >= 12 && currentHour < 14,
         dinner: currentHour >= 18 && currentHour < 21,
       };
       let closed = currentHour >= 0 && currentHour < 8;
-      
+
       let transaction = await getTransactions();
-      if (transaction.length > 100) {
-        axios.delete(
+
+      // Delete oldest transaction if at cap
+      if (transaction.length >= 100) {
+        await axios.delete(
           `https://restaurantbackend-9o91.onrender.com/restaurant/transactions/0`
         );
       }
