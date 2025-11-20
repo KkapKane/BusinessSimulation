@@ -1,6 +1,6 @@
 const { getTransactions } = require("./controllers/controller");
 const { generateTransaction } = require("./simulations/simulateTransaction");
-const moment = require("moment");
+const moment = require("moment-timezone");
 const express = require("express");
 const Chance = require("chance");
 const { default: axios } = require("axios");
