@@ -106,7 +106,7 @@ async function startLoop() {
           generateTransaction();
         }
       } else if (BusyHour.dinner) {
-        if (chance.d2() >= 1) {
+        if (chance.natural({ min: 1, max: 2 }) >= 1) {
           console.log("from dinner hrs");
           generateTransaction();
         }
@@ -114,7 +114,7 @@ async function startLoop() {
         return;
       } else {
         console.log("from normal hrs (Hour: " + currentHour + ")");
-        if (chance.d4() >= 2) {
+        if (chance.natural({ min: 1, max: 4 }) >= 2) {
           generateTransaction();
         }
       }
