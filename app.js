@@ -117,5 +117,5 @@ async function startLoop() {
         }
       }
     })();
-  }, 10000);
+  }, 180000);
 }
