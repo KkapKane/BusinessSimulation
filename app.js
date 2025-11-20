@@ -25,11 +25,11 @@ async function startLoop() {
       let currentHour = parseInt(moment(time).format("HH"));
 
       let BusyHour = {
-        breakfast: currentHour >= 8 && currentHour < 11,
+        breakfast: currentHour >= 10 && currentHour < 11,
         lunch: currentHour >= 12 && currentHour < 14,
         dinner: currentHour >= 18 && currentHour < 21,
       };
-      let closed = currentHour >= 0 && currentHour < 8;
+      let closed = currentHour < 10 || currentHour >= 22;
 
       let transaction = await getTransactions();
 
