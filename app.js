@@ -6,8 +6,6 @@ const Chance = require("chance");
 const { default: axios } = require("axios");
 const port = 5000;
 
-var chance = new Chance();
-
 const app = express();
 
 app.get("/health", (req, res) => {
@@ -89,7 +87,7 @@ async function startLoop() {
       let transaction = await getTransactions();
 
       // Delete oldest transaction if at cap
-      if (transaction.length >= 100) {
+      if (transaction.length >= 1000) {
         await axios.delete(
           `https://restaurantbackend-9o91.onrender.com/restaurant/transactions/0`
         );
