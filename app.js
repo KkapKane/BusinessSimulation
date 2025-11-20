@@ -10,6 +10,11 @@ var chance = new Chance();
 
 const app = express();
 
+app.get("/health", (req, res) => {
+  console.log("Health check request received");
+  res.status(200).json({ status: "ok", timestamp: new Date().toISOString() });
+});
+
 app.listen(port, () => startLoop());
 
 async function startLoop() {
