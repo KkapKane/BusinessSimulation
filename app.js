@@ -18,7 +18,7 @@ app.get("/health", (req, res) => {
 app.get("/status", (req, res) => {
   console.log("Status request received");
   let time = new Date();
-  let currentHour = parseInt(moment(time).format("HH"));
+  let currentHour = parseInt(moment(time).tz("America/Chicago").format("HH"));
 
   let BusyHour = {
     breakfast: currentHour >= 10 && currentHour < 11,
@@ -62,7 +62,9 @@ async function startLoop() {
     (async () => {
       // Update time and busy hours on each interval
       let time = new Date();
-      let currentHour = parseInt(moment(time).format("HH"));
+      let currentHour = parseInt(
+        moment(time).tz("America/Chicago").format("HH")
+      );
 
       let BusyHour = {
         breakfast: currentHour >= 10 && currentHour < 11,
