@@ -111,8 +111,6 @@ async function startLoop() {
           generateTransaction();
         }
       } else if (closed) {
-        console.log("from closed");
-
         return;
       } else {
         console.log("from normal hrs (Hour: " + currentHour + ")");
